@@ -3,6 +3,7 @@
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
       <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
       <form @submit.prevent="register">
+        <!-- Nome -->
         <div class="mb-4">
           <label for="name" class="block text-sm font-medium text-gray-700"
             >Name</label
@@ -19,6 +20,24 @@
           </p>
         </div>
 
+        <!-- Cognome -->
+        <div class="mb-4">
+          <label for="surname" class="block text-sm font-medium text-gray-700"
+            >Surname</label
+          >
+          <input
+            v-model="form.surname"
+            id="surname"
+            type="text"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            required
+          />
+          <p v-if="errors.surname" class="text-red-500 text-sm mt-2">
+            {{ errors.surname }}
+          </p>
+        </div>
+
+        <!-- Email -->
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700"
             >Email</label
@@ -35,6 +54,26 @@
           </p>
         </div>
 
+        <!-- Data di nascita -->
+        <div class="mb-4">
+          <label
+            for="date_of_birth"
+            class="block text-sm font-medium text-gray-700"
+            >Date of Birth (yyyy/mm/dd)</label
+          >
+          <input
+            v-model="form.date_of_birth"
+            id="date_of_birth"
+            type="date"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            required
+          />
+          <p v-if="errors.date_of_birth" class="text-red-500 text-sm mt-2">
+            {{ errors.birthdate }}
+          </p>
+        </div>
+
+        <!-- Password -->
         <div class="mb-4">
           <label for="password" class="block text-sm font-medium text-gray-700"
             >Password</label
@@ -51,6 +90,7 @@
           </p>
         </div>
 
+        <!-- Conferma password -->
         <div class="mb-4">
           <label
             for="password_confirmation"
@@ -72,6 +112,7 @@
           </p>
         </div>
 
+        <!-- Bottone di registrazione -->
         <button
           type="submit"
           class="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-700"
@@ -91,7 +132,9 @@ export default {
     return {
       form: {
         name: "",
+        surname: "",
         email: "",
+        date_of_birth: "",
         password: "",
         password_confirmation: "",
       },
