@@ -53,7 +53,7 @@
 export default {
   computed: {
     isLoggedIn() {
-      return !localStorage.getItem("token"); // Verifica se il token esiste
+      return !!localStorage.getItem("token"); // Verifica se il token esiste
     },
   },
 };
