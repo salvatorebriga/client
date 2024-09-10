@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center min-h-screen bg-gray-100">
+  <div class="flex justify-center items-center min-h-screen">
     <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
       <h2 class="text-2xl font-bold mb-6 text-gray-800">Login</h2>
       <form @submit.prevent="login">
@@ -60,7 +60,7 @@ export default {
         localStorage.setItem("token", response.data.token);
 
         // Reindirizza alla pagina dashboard
-        this.$router.push("/dashboard").then(() => {
+        this.$router.push("/").then(() => {
           window.location.reload();
         });
       } catch (error) {
@@ -73,6 +73,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Aggiungi ulteriori stili se necessario */
-</style>
+<style lang="scss" scoped></style>

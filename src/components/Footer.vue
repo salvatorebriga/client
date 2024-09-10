@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-800 text-white py-4 mt-8">
+  <footer class="bg-gray-100 py-4 mt-8">
     <div class="container mx-auto text-center">
       <p>&copy; 2024 MyApp. All rights reserved.</p>
       <p>
@@ -27,6 +27,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Aggiungi ulteriori stili se necessario */
-</style>
+<style lang="scss" scoped></style>

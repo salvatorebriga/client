@@ -18,6 +18,4 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-/* Add your styles here */
-</style>
+<style lang="scss" scoped></style>
