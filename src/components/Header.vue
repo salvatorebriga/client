@@ -1,22 +1,32 @@
 <template>
   <header class="py-4 border-b-2">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <img
-        src="/public/Airbnb_Logo_Bélo.svg.png"
-        alt="Logo"
-        class="w-24"
-        style="filter: brightness(0) saturate(100%)"
-      />
+      <!-- Logo -->
+      <div>
+        <img
+          src="/public/Airbnb_Logo_Bélo.svg.png"
+          alt="Logo"
+          class="max-w-20"
+          style="filter: brightness(0) saturate(100%)"
+        />
+      </div>
 
-      <input
-        type="text"
-        placeholder="Search"
-        class="border px-4 py-2 rounded-full focus:outline-none justify-center"
-      />
+      <!-- Barra di ricerca -->
+      <div class="flex-grow mx-4 flex items-center justify-center">
+        <input
+          type="text"
+          placeholder="Search"
+          class="border px-4 py-2 rounded-full focus:outline-none"
+        />
+      </div>
 
-      <div class="relative">
-        <!-- Icona utente -->
-        <button @click="toggleMenu" class="focus:outline-none">
+      <div class="relative flex items-center">
+        <!-- Icona utente con nome -->
+        <p class="hidden sm:block mr-2" v-if="name">{{ name }}</p>
+        <button
+          @click="toggleMenu"
+          class="focus:outline-none flex items-center space-x-2"
+        >
           <img
             src="/public/user-icon.png"
             alt="User Icon"
@@ -27,10 +37,20 @@
         <!-- Menu a discesa -->
         <div
           v-if="showMenu"
-          class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg"
+          class="absolute right-0 mt-48 w-48 bg-white border border-gray-300 rounded-lg shadow-lg"
         >
           <ul class="py-2">
-            <!-- Se non è loggato, mostra Accedi e Registrati -->
+            <!-- Home sempre visibile -->
+            <li>
+              <router-link
+                to="/"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                active-class="text-gray-300"
+              >
+                Home
+              </router-link>
+            </li>
+            <!-- Se non è loggato, mostra Login e Register -->
             <li v-if="!isLoggedIn">
               <router-link
                 to="/login"
@@ -53,6 +73,7 @@
             <li v-if="isLoggedIn">
               <a
                 href="http://127.0.0.1:8000/"
+                target="_blank"
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 active-class="text-gray-300"
               >
@@ -112,6 +133,9 @@ export default {
     isLoggedIn() {
       return !!localStorage.getItem("token"); // Verifica se il token esiste
     },
+    name() {
+      return localStorage.getItem("name"); // Ottieni il nome dell'utente
+    },
   },
   methods: {
     toggleMenu() {
@@ -125,9 +149,10 @@ export default {
     },
     logout() {
       localStorage.removeItem("token"); // Rimuove il token per fare il logout
+      localStorage.removeItem("name"); // Rimuove anche il nome dell'utente
       this.$router.push("/login").then(() => {
-        window.location.reload();
-      }); // Reindirizza alla pagina di login
+        window.location.reload(); // Reindirizza e ricarica la pagina
+      });
       this.showLogoutModal = false; // Chiudi il modale
       this.showMenu = false; // Chiudi il menu
     },

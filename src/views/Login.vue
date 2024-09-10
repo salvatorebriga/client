@@ -56,8 +56,11 @@ export default {
           password: this.password,
         });
 
+        // console.log(response.data);
+
         // Salva il token ricevuto nella localStorage
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("name", response.data.user.name);
 
         // Reindirizza alla pagina dashboard
         this.$router.push("/").then(() => {

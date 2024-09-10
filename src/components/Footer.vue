@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-gray-100 py-4 mt-8">
-    <div class="container mx-auto text-center">
+    <div class="container-max mx-auto text-center">
       <p>&copy; 2024 MyApp. All rights reserved.</p>
       <p>
         <a
