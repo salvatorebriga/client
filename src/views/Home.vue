@@ -24,9 +24,9 @@ export default {
 </script>
 
 <template>
-  <div class="py-20 px-24 container-full mx-auto">
+  <div class="container py-6 mx-auto">
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6"
+      class="grid xs:grid-cols-1 px-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6"
     >
       <div
         v-for="apartment in apartments"
@@ -36,7 +36,7 @@ export default {
         <img
           src="https://images1.apartments.com/i2/mWiO3cfNJl4j2fiV6NrgaQdRQ99Zz10uknoBHKFPHlM/117/the-everett-gahanna-gahanna-oh-building-photo.jpg?p=1"
           alt="Apartment Image"
-          class="w-full h-72 object-cover rounded-lg"
+          class="w-full h-60 object-cover rounded-lg"
         />
         <div class="p-1">
           <p class="font-semibold mt-2">{{ apartment.title }}</p>

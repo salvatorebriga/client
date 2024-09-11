@@ -1,28 +1,29 @@
 <template>
-  <header class="py-4 border-b-2">
-    <div class="container mx-auto flex justify-between items-center px-4">
+  <header class="py-4 border-b sticky top-0 bg-white">
+    <div
+      class="container mx-auto flex justify-between items-center px-2 sm:px-4"
+    >
       <!-- Logo -->
-      <div>
+      <div class="hidden sm:block">
         <img
           src="/public/Airbnb_Logo_Bélo.svg.png"
           alt="Logo"
           class="max-w-20"
-          style="filter: brightness(0) saturate(100%)"
         />
       </div>
 
       <!-- Barra di ricerca -->
-      <div class="flex-grow mx-4 flex items-center justify-center">
+      <div class="flex-grow mx-4 flex items-center sm:justify-center">
         <input
           type="text"
           placeholder="Search"
-          class="border px-4 py-2 rounded-full focus:outline-none"
+          class="border px-4 py-2 rounded-full focus:outline-none font-medium shadow sm:w-7/12"
         />
       </div>
 
-      <div class="relative flex items-center">
+      <div class="relative flex items-center gap-2">
         <!-- Icona utente con nome -->
-        <p class="hidden sm:block mr-2" v-if="name">{{ name }}</p>
+        <p class="hidden sm:block font-semibold" v-if="name">{{ name }}</p>
         <button
           @click="toggleMenu"
           class="focus:outline-none flex items-center space-x-2"
@@ -31,6 +32,10 @@
             src="/public/user-icon.png"
             alt="User Icon"
             class="w-8 h-8 rounded-full"
+            style="
+              filter: brightness(0) saturate(100%) invert(41%) sepia(7%)
+                saturate(19%) hue-rotate(1deg) brightness(97%) contrast(89%);
+            "
           />
         </button>
 

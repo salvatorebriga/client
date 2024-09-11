@@ -23,10 +23,7 @@
             required
           />
         </div>
-        <button
-          type="submit"
-          class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
+        <button type="submit" class="w-full py-2 text-white rounded">
           Login
         </button>
         <!-- Mostra il messaggio di errore se presente -->
@@ -76,4 +73,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  background-color: #ff5a5f;
+  &:hover {
+    background-color: #db3b41;
+  }
+}
+</style>
