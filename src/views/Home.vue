@@ -5,6 +5,7 @@ export default {
   data() {
     return {
       apartments: [],
+      imgUrl: "http://127.0.0.1:8000/storage/",
     };
   },
   created() {
@@ -34,10 +35,12 @@ export default {
         class="bg-inherit rounded-lg overflow-hidden"
       >
         <img
-          src="https://images1.apartments.com/i2/mWiO3cfNJl4j2fiV6NrgaQdRQ99Zz10uknoBHKFPHlM/117/the-everett-gahanna-gahanna-oh-building-photo.jpg?p=1"
+          v-if="apartment.img"
+          :src="`${imgUrl}${apartment.img}`"
           alt="Apartment Image"
           class="w-full h-60 object-cover rounded-lg"
         />
+
         <div class="p-1">
           <p class="font-semibold mt-2">{{ apartment.title }}</p>
           <p class="text-gray-600 mt-1">
