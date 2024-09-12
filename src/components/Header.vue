@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="py-4 sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300"
-  >
+  <header class="py-4 border-b sticky top-0 bg-white">
     <div
       class="container mx-auto flex justify-between items-center px-2 sm:px-4"
     >
