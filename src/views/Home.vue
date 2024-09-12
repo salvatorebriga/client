@@ -19,9 +19,19 @@ export default {
       try {
         const response = await axios.get("/apartments");
         this.apartments = response.data;
-        console.log(this.apartments);
+        this.shuffleApartments();
       } catch (error) {
         console.error("Error fetching apartments:", error);
+      }
+    },
+
+    async shuffleApartments() {
+      for (let i = this.apartments.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [this.apartments[i], this.apartments[j]] = [
+          this.apartments[j],
+          this.apartments[i],
+        ];
       }
     },
   },
