@@ -1,5 +1,5 @@
 <template>
-  <header class="py-4 border-b sticky top-0 bg-white">
+  <header class="border-b sticky top-0 bg-white">
     <div class="container mx-auto flex justify-between items-center px-2 sm:px-4">
       <!-- Logo -->
       <div class="hidden sm:block">
