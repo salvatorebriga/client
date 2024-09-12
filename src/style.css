@@ -2,10 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-white text-black; /* Tema chiaro per default */
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #1a202c;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --border-light: #e5e7eb;
+  --border-dark: #374151;
+  --hover-light: #f3f4f6;
+  --hover-dark: #4b5563;
 }
 
-.dark body {
-  @apply bg-gray-900 text-white; /* Tema scuro */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dark .bg-light {
+  background-color: var(--bg-dark);
+}
+
+.dark .text-light {
+  color: var(--text-dark);
+}
+
+.dark .border-light {
+  border-color: var(--border-dark);
+}
+
+.dark .hover-light:hover {
+  background-color: var(--hover-dark);
 }
