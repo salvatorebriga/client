@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<Header />
 		<router-view></router-view>
 		<ButtonDarkMode :isDark="isDark" @click="toggleDark" />
 	</div>
@@ -7,10 +8,12 @@
 
 <script>
 import { useDark } from "@vueuse/core";
+import Header from "./components/Header.vue";
 import ButtonDarkMode from "./components/ButtonDarkMode.vue";
 
 export default {
 	components: {
+		Header,
 		ButtonDarkMode,
 	},
 	data() {
