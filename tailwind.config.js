@@ -3,7 +3,11 @@ export default {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Figtree"],
+      },
+    },
     screens: {
       xs: "360px",
       sm: "640px",
