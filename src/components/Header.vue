@@ -3,10 +3,10 @@
 		class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700"
 	>
 		<nav
-			class="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8"
+			class="mx-auto flex max-w-7xl items-center justify-between p-6 md:p-0 md:px-8"
 			aria-label="Global"
 		>
-			<div class="flex lg:flex-1">
+			<div class="flex md:flex-1">
 				<a href="#" class="-m-1.5 p-1.5">
 					<span class="sr-only">Your Company</span>
 					<img
@@ -16,7 +16,7 @@
 					/>
 				</a>
 			</div>
-			<div class="flex lg:hidden">
+			<div class="flex md:hidden">
 				<button
 					type="button"
 					class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-100"
@@ -26,30 +26,25 @@
 					<Bars3Icon class="h-6 w-6" aria-hidden="true" />
 				</button>
 			</div>
-			<div class="hidden lg:flex lg:gap-x-12">
+			<div class="hidden md:flex md:gap-x-2">
 				<a
 					href="#"
-					class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100"
+					class="text-sm font-semibold p-6 leading-6 text-gray-900 dark:text-gray-300 border-b-2 border-transparent hover:text-gray-700 dark:hover:text-gray-100 hover:border-gray-300 focus:outline-none focus:text-gray-700 dark:focus:text-gray-100 focus:border-indigo-600 transition duration-150 ease-in-out"
 					>Home</a
 				>
 				<a
 					href="#"
-					class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100"
+					class="text-sm font-semibold p-6 leading-6 text-gray-900 dark:text-gray-300 border-b-2 border-transparent hover:text-gray-700 dark:hover:text-gray-100 hover:border-gray-300 focus:outline-none focus:text-gray-700 dark:focus:text-gray-100 focus:border-indigo-600 transition duration-150 ease-in-out"
 					>Advanced Search</a
 				>
-				<a
-					href="#"
-					class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100"
-					>Company</a
-				>
 			</div>
-			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
+			<div class="hidden md:flex md:flex-1 md:justify-end">
 				<a
 					href="http://127.0.0.1:8000/login"
-					class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100"
+					class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 border-b-2 border-transparent"
 					><button
 						type="button"
-						class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+						class="text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-900 font-medium rounded-lg text-sm px-4 py-2 text-center"
 					>
 						Become a host <span aria-hidden="true">&rarr;</span>
 					</button>
@@ -57,13 +52,13 @@
 			</div>
 		</nav>
 		<Dialog
-			class="lg:hidden"
+			class="md:hidden"
 			@close="mobileMenuOpen = false"
 			:open="mobileMenuOpen"
 		>
 			<div class="fixed inset-0 z-10" />
 			<DialogPanel
-				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-gray-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-gray-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:sm:ring-gray-700"
 			>
 				<div class="flex items-center justify-between">
 					<a href="#" class="-m-1.5 p-1.5">
@@ -84,26 +79,26 @@
 					</button>
 				</div>
 				<div class="mt-6 flow-root">
-					<div class="-my-6 divide-y divide-gray-500/10">
+					<div class="-my-6 divide-y divide-gray-500/10 dark:divide-gray-700">
 						<div class="space-y-2 py-6">
 							<a
 								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-gray-50"
+								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-gray-300 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 transition duration-150 ease-in-out"
 								>Home</a
 							>
 							<a
 								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-gray-50"
+								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 dark:text-gray-300 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 transition duration-150 ease-in-out"
 								>Advanced Search</a
 							>
 						</div>
 						<div class="py-6">
 							<a
-								href="#"
-								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-gray-50"
+								href="http://127.0.0.1:8000/login"
+								class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-6 text-gray-900 dark:text-gray-100 border-b-2 border-transparent"
 								><button
 									type="button"
-									class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+									class="text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-900 font-medium rounded-lg text-sm px-4 py-2 text-center"
 								>
 									Become a host <span aria-hidden="true">&rarr;</span>
 								</button></a
