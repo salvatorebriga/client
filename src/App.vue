@@ -6,7 +6,7 @@
       class="p-3 text-white rounded-full bg-indigo-700 absolute bottom-4 right-4"
     >
       <svg
-        v-if="isDark === true"
+        v-if="isDark === false"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
