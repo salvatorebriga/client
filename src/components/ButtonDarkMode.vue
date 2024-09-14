@@ -1,6 +1,6 @@
 <template>
   <button
-    class="p-3 rounded-full absolute bottom-4 right-4 border-transparent hover:dark:bg-indigo-500 dark:bg-indigo-400 hover:bg-airbnbcolorhover bg-airbnbcolor"
+    class="p-3 rounded-full absolute bottom-4 right-4 border-transparent hover:dark:bg-indigo-700 dark:bg-indigo-600 hover:bg-airbnbcolorhover bg-airbnbcolor"
   >
     <svg
       v-if="isDark === false"

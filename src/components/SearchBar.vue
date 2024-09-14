@@ -8,7 +8,7 @@
     />
 
     <div
-      class="bg-airbnbcolor hover:bg-airbnbcolorhover rounded-full text-white font-bold flex items-center p-2 px-3 dark:bg-indigo-400 hover:dark:bg-indigo-500"
+      class="bg-airbnbcolor hover:bg-airbnbcolorhover rounded-full text-white font-bold flex items-center p-2 px-3 dark:bg-indigo-600 hover:dark:bg-indigo-700"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
