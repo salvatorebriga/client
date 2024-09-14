@@ -2,19 +2,19 @@
   <div class="relative w-screen h-screen" :class="{ dark: isDark }">
     <Header />
     <router-view></router-view>
-    <ButtonDarkMode :isDark="isDark" @click="toggleDark" />
+    <ThemeSwitcher :isDark="isDark" @click="toggleDark" />
   </div>
 </template>
 
 <script>
 import { useDark } from "@vueuse/core";
 import Header from "./components/Header.vue";
-import ButtonDarkMode from "./components/ButtonDarkMode.vue";
+import ThemeSwitcher from "./components/ThemeSwitcher.vue";
 
 export default {
   components: {
     Header,
-    ButtonDarkMode,
+    ThemeSwitcher,
   },
   data() {
     return {
