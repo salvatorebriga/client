@@ -24,7 +24,7 @@
         <div
           class="hidden sm:block px-4 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-indigo-400"
         >
-          <a class="font-bold" href="https://127.0.0.1:8000/login"
+          <a class="font-bold" href="http://127.0.0.1:8000/login"
             >Affitta con BoolBnB</a
           >
         </div>
