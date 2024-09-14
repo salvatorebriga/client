@@ -1,15 +1,15 @@
 <template>
   <button
-    class="p-3 text-white rounded-full bg-indigo-700 sticky bottom-4 left-4"
+    class="p-3 rounded-full absolute bottom-4 right-4 border-transparent hover:dark:bg-indigo-500 dark:bg-indigo-400 hover:bg-airbnbcolorhover bg-airbnbcolor"
   >
     <svg
       v-if="isDark === false"
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill="white"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6"
+      class="size-6 text-white"
     >
       <path
         stroke-linecap="round"
@@ -24,7 +24,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6"
+      class="size-6 text-white"
     >
       <path
         stroke-linecap="round"

@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <main></main>
+</template>
 
 <script>
 import axios from "../axios";

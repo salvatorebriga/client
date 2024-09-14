@@ -4,8 +4,9 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Figtree"],
+      colors: {
+        airbnbcolor: "#fc595f",
+        airbnbcolorhover: "#f14545",
       },
     },
     screens: {
