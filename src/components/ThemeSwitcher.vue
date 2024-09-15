@@ -1,6 +1,6 @@
 <template>
   <button
-    class="p-3 rounded-full absolute bottom-4 right-4 border-transparent hover:dark:bg-indigo-700 dark:bg-indigo-600 hover:bg-airbnbcolorhover bg-airbnbcolor"
+    class="z-20 absolute top-7 right-14 p-3 rounded-full border-transparent hover:dark:bg-indigo-700 dark:bg-indigo-600 hover:bg-airbnbcolorhover bg-airbnbcolor"
   >
     <svg
       v-if="isDark === false"
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "ButtonDarkMode",
+  name: "ThemeSwitcher",
   props: ["isDark"],
 };
 </script>

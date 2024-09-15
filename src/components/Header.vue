@@ -1,6 +1,6 @@
 <template>
   <header
-    class="border-b border-gray-300 dark:bg-gray-800 dark:border-none dark:text-white"
+    class="border-b border-gray-300 bg-white dark:bg-gray-800 dark:border-none dark:text-white"
   >
     <div class="container py-6 mx-auto justify-between flex items-center">
       <!-- sinistra -->
@@ -31,7 +31,7 @@
 
         <!-- icona pianeta -->
         <div
-          class="hidden md:block hover:bg-gray-200 dark:hover:bg-indigo-400 rounded-full p-3"
+          class="hidden md:block hover:bg-gray-200 dark:hover:bg-indigo-400 rounded-full p-3 cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

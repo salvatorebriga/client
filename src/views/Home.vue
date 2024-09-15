@@ -1,9 +1,37 @@
 <template>
-  <main></main>
+  <main>
+    <div class="container mx-auto dark:text-white px-3">
+      <h2 class="py-6 font-bold text-2xl">In Evidenza</h2>
+      <div
+        class="p-3 container mx-auto gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+      >
+        <ApartmentCard
+          :title="apartment.title"
+          :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`"
+          :isAvailable="apartment.is_available"
+          v-for="apartment in sponsoredApartments"
+        />
+      </div>
+      <h2 class="py-6 font-bold text-2xl">Scelti per te</h2>
+      <div
+        class="p-3 container gap-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+      >
+        <ApartmentCard
+          :title="apartment.title"
+          :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`"
+          :isAvailable="apartment.is_available"
+          v-for="apartment in normalApartments"
+        />
+      </div>
+    </div>
+  </main>
 </template>
 
 <script>
 import axios from "../axios";
+import ApartmentCard from "../components/ApartmentCard.vue";
 
 export default {
   data() {
@@ -15,6 +43,9 @@ export default {
   },
   created() {
     this.fetchApartments();
+  },
+  components: {
+    ApartmentCard,
   },
   methods: {
     async fetchApartments() {

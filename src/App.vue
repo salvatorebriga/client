@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-screen h-screen" :class="{ dark: isDark }">
+  <div class="">
     <Header />
     <router-view></router-view>
     <ThemeSwitcher :isDark="isDark" @click="toggleDark" />

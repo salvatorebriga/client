@@ -5,3 +5,13 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+// per webkit (Chrome, Safari, Edge)
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+// per firefox
+* {
+  scrollbar-width: 0px;
+}
