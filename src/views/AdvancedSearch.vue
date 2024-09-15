@@ -161,16 +161,21 @@ export default {
     };
   },
   created() {
-    this.fetchResults();
     this.fetchAvailableServices();
+    this.fetchResults();
   },
   watch: {
-    "$route.query.query": {
-      immediate: true,
-      handler(newQuery) {
-        this.searchQuery = newQuery || "";
-        this.fetchResults();
-      },
+    searchQuery(newQuery) {
+      this.fetchResults();
+    },
+    searchRadius(newRadius) {
+      this.fetchResults();
+    },
+    minRooms(newMinRooms) {
+      this.fetchResults();
+    },
+    selectedServices(newServices) {
+      this.fetchResults();
     },
   },
   methods: {
@@ -181,11 +186,17 @@ export default {
 
       if (this.searchQuery) {
         try {
-          const query = `/search?query=${encodeURIComponent(
+          // Costruisci la query string
+          let query = `/search?query=${encodeURIComponent(
             this.searchQuery
-          )}&radius=${this.searchRadius}&min_rooms=${
-            this.minRooms
-          }&services[]=${this.selectedServices.join("&services[]=")}`;
+          )}&radius=${this.searchRadius}&min_rooms=${this.minRooms}`;
+
+          // Aggiungi il parametro dei servizi solo se ci sono servizi selezionati
+          if (this.selectedServices.length > 0) {
+            query += `&services[]=${this.selectedServices.join(
+              "&services[]="
+            )}`;
+          }
 
           const response = await axios.get(query);
           this.results = response.data;
@@ -211,6 +222,7 @@ export default {
         this.error = "Impossibile caricare i servizi disponibili.";
       }
     },
+
     toggleDropdown() {
       this.dropdownOpen = !this.dropdownOpen; // Mostra/nascondi il dropdown
     },
