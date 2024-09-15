@@ -5,11 +5,12 @@
     <div class="container py-6 mx-auto justify-between flex items-center">
       <!-- sinistra -->
       <div class="logo flex gap-3 items-center w-1/3 p-3">
-        <p
+        <a
+          href="/"
           class="font-bold text-2xl hover:text-airbnbcolor dark:hover:text-indigo-400 cursor-pointer"
         >
           BoolBnB
-        </p>
+        </a>
       </div>
 
       <!-- centro -->
