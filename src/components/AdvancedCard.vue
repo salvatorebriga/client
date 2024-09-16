@@ -4,10 +4,15 @@
     <p class="font-bold text-lg mb-2">{{ title }}</p>
     <p class="text-gray-600 dark:text-gray-400 mb-2">{{ address }}</p>
     <p class="font-medium mb-2">Host: {{ host }}</p>
-    <p class="text-sm mb-2">Rooms: {{ rooms }}</p>
-    <p class="text-sm mb-2">Beds: {{ beds }}</p>
+    <div class="flex gap-3">
+      <p class="text-sm mb-2">Rooms: {{ rooms }}</p>
+      <p class="text-sm mb-2">Beds: {{ beds }}</p>
+    </div>
     <p class="text-sm font-semibold">
-      {{ isAvailable ? "Available" : "Not Available" }}
+      Available:
+      <span :class="isAvailable ? 'text-green-500' : 'text-red-500'">{{
+        isAvailable ? "Yes" : "No"
+      }}</span>
     </p>
   </div>
 </template>
