@@ -3,27 +3,17 @@
     <div class="container mx-auto dark:text-white px-3">
       <h2 class="py-6 font-bold text-2xl">In Evidenza</h2>
       <div
-        class="p-3 container mx-auto gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
-      >
-        <ApartmentCard
-          :title="apartment.title"
-          :img="apartment.img"
-          :host="`${apartment.user.name} ${apartment.user.surname}`"
-          :isAvailable="apartment.is_available"
-          v-for="apartment in sponsoredApartments"
-        />
+        class="p-3 container mx-auto gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <ApartmentCard :title="apartment.title" :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`" :isAvailable="apartment.is_available"
+          v-for="apartment in sponsoredApartments" :key="apartment.id" @click="showApartmentDetails(apartment.id)" />
       </div>
       <h2 class="py-6 font-bold text-2xl">Scelti per te</h2>
       <div
-        class="p-3 container gap-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
-      >
-        <ApartmentCard
-          :title="apartment.title"
-          :img="apartment.img"
-          :host="`${apartment.user.name} ${apartment.user.surname}`"
-          :isAvailable="apartment.is_available"
-          v-for="apartment in normalApartments"
-        />
+        class="p-3 container gap-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        <ApartmentCard :title="apartment.title" :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`" :isAvailable="apartment.is_available"
+          v-for="apartment in normalApartments" :key="apartment.id" @click="showApartmentDetails(apartment.id)" />
       </div>
     </div>
   </main>
@@ -73,8 +63,9 @@ export default {
         [array[i], array[j]] = [array[j], array[i]];
       }
     },
+    showApartmentDetails(id) {
+      this.$router.push({ name: "DetailsApartment", params: { id } });
+    },
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
