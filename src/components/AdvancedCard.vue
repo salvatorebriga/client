@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg shadow-md p-4 bg-white dark:bg-gray-800">
+  <div v-if="isAvailable" class="rounded-lg shadow-md p-4 bg-white dark:bg-gray-800">
     <img :src="imageUrl" :alt="title" class="h-60 w-full rounded-lg mb-4" />
     <p class="font-bold text-lg mb-2">{{ title }}</p>
     <p class="text-gray-600 dark:text-gray-400 mb-2">{{ address }}</p>
@@ -8,12 +8,12 @@
       <p class="text-sm mb-2">Rooms: {{ rooms }}</p>
       <p class="text-sm mb-2">Beds: {{ beds }}</p>
     </div>
-    <p class="text-sm font-semibold">
+    <!-- <p class="text-sm font-semibold">
       Available:
       <span :class="isAvailable ? 'text-green-500' : 'text-red-500'">{{
         isAvailable ? "Yes" : "No"
       }}</span>
-    </p>
+    </p> -->
   </div>
 </template>
 
