@@ -64,7 +64,10 @@ export default {
 	computed: {
 		isVisible() {
 			// Controlla se la route attuale è '/advanced-search'
-			return this.$route.name !== "advanced-search";
+			return (
+				this.$route.name !== "advanced-search" &&
+				this.$route.name !== "details-apartment"
+			);
 		},
 	},
 	methods: {
