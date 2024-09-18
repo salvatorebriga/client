@@ -1,19 +1,32 @@
 <template>
   <main>
-    <div class="container mx-auto dark:text-white px-3">
-      <h2 class="py-6 font-bold text-2xl">In Evidenza</h2>
+    <div class="dark:text-white p-3 py-10">
       <div
-        class="p-3 container mx-auto gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <ApartmentCard :title="apartment.title" :img="apartment.img"
-          :host="`${apartment.user.name} ${apartment.user.surname}`" :isAvailable="apartment.is_available"
-          v-for="apartment in sponsoredApartments" :key="apartment.id" @click="showApartmentDetails(apartment.id)" />
+        class="gap-5 p-3 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+      >
+        <ApartmentCard
+          :title="apartment.title"
+          :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`"
+          :isAvailable="apartment.is_available"
+          v-for="apartment in sponsoredApartments"
+          :key="apartment.id"
+          @click="showApartmentDetails(apartment.id)"
+        />
       </div>
-      <h2 class="py-6 font-bold text-2xl">Scelti per te</h2>
+      <h2 class="py-6 p-3 font-bold text-2xl">Scelti per te</h2>
       <div
-        class="p-3 container gap-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <ApartmentCard :title="apartment.title" :img="apartment.img"
-          :host="`${apartment.user.name} ${apartment.user.surname}`" :isAvailable="apartment.is_available"
-          v-for="apartment in normalApartments" :key="apartment.id" @click="showApartmentDetails(apartment.id)" />
+        class="p-3 gap-5 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+      >
+        <ApartmentCard
+          :title="apartment.title"
+          :img="apartment.img"
+          :host="`${apartment.user.name} ${apartment.user.surname}`"
+          :isAvailable="apartment.is_available"
+          v-for="apartment in normalApartments"
+          :key="apartment.id"
+          @click="showApartmentDetails(apartment.id)"
+        />
       </div>
     </div>
   </main>
