@@ -1,6 +1,6 @@
 <template>
   <main
-    class="container mx-auto pt-10 rounded-lg dark:bg-gray-900 dark:text-white"
+    class="container mx-auto pt-10 rounded-lg dark:bg-gray-900 dark:text-white pb-16"
   >
     <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
       <h1 class="w-full text-2xl font-bold mb-5">{{ apartment.title }}</h1>
