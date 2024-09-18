@@ -4,24 +4,22 @@
     <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 flex gap-6">
       <!-- Immagine a Sinistra -->
       <div class="flex-shrink-0 w-1/3">
-        <img
-          :src="imageUrl"
-          alt="Apartment Image"
-          class="w-full h-auto rounded-lg shadow-md"
-        />
+        <img :src="imageUrl" alt="Apartment Image" class="w-full h-auto rounded-lg shadow-md" />
       </div>
       <!-- Descrizione a Destra -->
       <div class="w-2/3">
         <p class="text-lg mb-2">
           <strong>Address:</strong> {{ apartment.address }}
         </p>
-        <p class="text-lg mb-2"><strong>Host:</strong> {{ apartment.host }}</p>
+        <!-- Nome e cognome, v-if per risolvere errore in console -->
+        <p class="text-lg mb-2" v-if="apartment.user"><strong>Host:</strong> {{ apartment.user.name }} {{
+          apartment.user.surname }}</p>
         <p class="text-lg mb-2">
           <strong>Rooms:</strong> {{ apartment.rooms }}
         </p>
         <p class="text-lg mb-2"><strong>Beds:</strong> {{ apartment.beds }}</p>
         <p class="text-lg mb-2">
-          <strong>Available:</strong> {{ apartment.isAvailable ? "Yes" : "No" }}
+          <strong>Available:</strong> {{ apartment.is_available ? "Yes" : "No" }}
         </p>
       </div>
     </div>
