@@ -1,5 +1,5 @@
 <template>
-  <main class="pt-10 rounded-lg px-3">
+  <main class="py-20 rounded-lg px-3">
     <div
       class="container mx-auto bg-white dark:text-white shadow dark:bg-gray-800 rounded-lg pt-6 pb-6"
     >
