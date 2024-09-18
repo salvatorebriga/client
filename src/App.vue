@@ -3,6 +3,7 @@
     <Header />
     <router-view></router-view>
     <ThemeSwitcher :isDark="isDark" @click="toggleDark" />
+    <Footer />
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 import { useDark } from "@vueuse/core";
 import Header from "./components/Header.vue";
 import ThemeSwitcher from "./components/ThemeSwitcher.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
     Header,
     ThemeSwitcher,
+    Footer,
   },
   data() {
     return {
