@@ -5,13 +5,13 @@
         class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6"
       >
         <ApartmentCard
+          v-for="apartment in sponsoredApartments"
+          @click="showApartmentDetails(apartment.id)"
           :title="apartment.title"
           :img="apartment.img"
           :host="`${apartment.user.name} ${apartment.user.surname}`"
           :isAvailable="apartment.is_available"
-          v-for="apartment in sponsoredApartments"
           :key="apartment.id"
-          @click="showApartmentDetails(apartment.id)"
         />
       </div>
       <h2 class="py-6 font-bold text-2xl">Scelti per te</h2>
@@ -19,13 +19,13 @@
         class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6"
       >
         <ApartmentCard
+          v-for="apartment in normalApartments"
+          @click="showApartmentDetails(apartment.id)"
           :title="apartment.title"
           :img="apartment.img"
           :host="`${apartment.user.name} ${apartment.user.surname}`"
           :isAvailable="apartment.is_available"
-          v-for="apartment in normalApartments"
           :key="apartment.id"
-          @click="showApartmentDetails(apartment.id)"
         />
       </div>
     </div>
