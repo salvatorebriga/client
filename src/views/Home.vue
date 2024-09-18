@@ -1,9 +1,8 @@
 <template>
   <main>
-    <div class="container mx-auto dark:text-white px-3">
-      <h2 class="py-6 font-bold text-2xl">In Evidenza</h2>
+    <div class="dark:text-white py-10 px-6">
       <div
-        class="p-3 container mx-auto gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+        class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6"
       >
         <ApartmentCard
           :title="apartment.title"
@@ -17,7 +16,7 @@
       </div>
       <h2 class="py-6 font-bold text-2xl">Scelti per te</h2>
       <div
-        class="p-3 container gap-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+        class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6"
       >
         <ApartmentCard
           :title="apartment.title"
