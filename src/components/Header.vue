@@ -8,14 +8,14 @@
         <!-- Logo per la modalità chiara -->
         <img
           class="light block dark:hidden hover:scale-105"
-          src="/public/img/boolbnb-logo.png"
+          src="/img/boolbnb-logo.png"
           alt="Logo"
           href="/"
         />
         <!-- Logo per la modalità scura -->
         <img
           class="dark hidden dark:block hover:scale-105"
-          src="/public/img/boolbnb-logo.png"
+          src="/img/boolbnb-logo.png"
           alt="Logo Dark Mode"
         />
         <a
@@ -41,9 +41,9 @@
           >
         </div>
 
-        <!-- icona pianeta -->
+        <!-- icona lingue -->
         <div
-          class="hover:scale-125 hidden md:block hover:bg-gray-200 dark:hover:bg-indigo-400 rounded-full p-3 cursor-pointer transition-all duration-300"
+          class="hover:scale-105 hidden md:block hover:bg-gray-200 dark:hover:bg-indigo-400 rounded-full p-3 cursor-pointer transition-all duration-300"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
