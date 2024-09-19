@@ -6,11 +6,11 @@ export default {
     extend: {
       colors: {
         airbnbcolor: "#fc595f",
-        airbnbcolorhover: "#f14545",
+        airbnbcolorhover: "#d13333",
       },
     },
     screens: {
-      xs: "360px",
+      xs: "480px",
       sm: "640px",
       md: "768px",
       lg: "1024px",

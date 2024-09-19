@@ -1,19 +1,16 @@
 <template>
-  <div v-if="isAvailable" class="dark:text-white">
+  <div
+    v-if="isAvailable"
+    class="relative overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
+  >
     <img
-      class="h-80 w-full mb-1 rounded-lg bg-center"
+      class="w-full h-80 object-cover rounded-lg mb-1"
       :src="imageUrl"
       :alt="title"
     />
-    <div class="p-1">
+    <div class="p-2 dark:text-white">
       <h2 class="font-bold mb-1">{{ title }}</h2>
       <p class="mb-1">Host: {{ host }}</p>
-      <!-- <p>
-        Available:
-        <span :class="isAvailable ? 'text-green-500' : 'text-red-500'">{{
-          isAvailable ? "Yes" : "No"
-        }}</span>
-      </p> -->
     </div>
   </div>
 </template>
