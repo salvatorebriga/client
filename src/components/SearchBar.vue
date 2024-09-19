@@ -4,12 +4,12 @@
       <h2
         class="transition-all duration-300 transform hover:scale-105 cursor-pointer"
       >
-        Soggiorni
+        Stays
       </h2>
       <h2
         class="transition-all duration-300 transform hover:scale-105 cursor-pointer"
       >
-        Esperienze
+        Experiences
       </h2>
     </div>
     <!-- Contenitore dell'input -->
