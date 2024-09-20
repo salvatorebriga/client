@@ -16,50 +16,50 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    imageUrl() {
-      return `http://127.0.0.1:8000/storage/${this.img}`;
+  export default {
+    computed: {
+      imageUrl() {
+        return `http://127.0.0.1:8000/storage/${this.img}`
+      },
     },
-  },
-  props: {
-    id: {
-      type: Number,
-      required: true,
+    props: {
+      id: {
+        type: Number,
+        required: true,
+      },
+      img: {
+        type: String,
+        required: true,
+      },
+      title: {
+        type: String,
+        required: true,
+      },
+      address: {
+        type: String,
+        required: true,
+      },
+      host: {
+        type: String,
+        required: true,
+      },
+      rooms: {
+        type: Number,
+        required: true,
+      },
+      beds: {
+        type: Number,
+        required: true,
+      },
+      isAvailable: {
+        type: Number,
+        required: true,
+      },
     },
-    img: {
-      type: String,
-      required: true,
+    methods: {
+      showApartmentDetails(id) {
+        this.$router.push({ name: 'details-apartment', params: { id } })
+      },
     },
-    title: {
-      type: String,
-      required: true,
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    host: {
-      type: String,
-      required: true,
-    },
-    rooms: {
-      type: Number,
-      required: true,
-    },
-    beds: {
-      type: Number,
-      required: true,
-    },
-    isAvailable: {
-      type: Number,
-      required: true,
-    },
-  },
-  methods: {
-    showApartmentDetails(id) {
-      this.$router.push({ name: "details-apartment", params: { id } });
-    },
-  },
-};
+  }
 </script>

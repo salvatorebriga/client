@@ -66,57 +66,57 @@
 </template>
 
 <script>
-export default {
-  name: "Footer",
-  data() {
-    return {
-      sections: [
-        {
-          title: "Support",
-          items: [
-            "Help Center",
-            "BoolCover",
-            "Anti-Discrimination",
-            "Disability Support",
-            "Cancellation Options",
-            "Report neighborhood concern",
-          ],
-        },
-        {
-          title: "Hosting",
-          items: [
-            "Boolbnb your home",
-            "BoolCover for Hosts",
-            "Hosting Resources",
-            "Community Forum",
-            "Hosting responsibly",
-            "Join a free Hosting class",
-          ],
-        },
-        {
-          title: "Boolbnb",
-          items: [
-            "Newsroom",
-            "New Features",
-            "Careers",
-            "Investors",
-            "Gift Cards",
-            "Boolbnb.org emergency stays",
-          ],
-        },
-      ],
-      footerLinks: [
-        { text: "Privacy", url: "#" },
-        { text: "Terms", url: "#" },
-        { text: "Sitemap", url: "#" },
-        { text: "Company details", url: "#" },
-      ],
-      socialLinks: [
-        { name: "Facebook", url: "#", iconClass: "fab fa-facebook-f" },
-        { name: "Twitter", url: "#", iconClass: "fab fa-twitter" },
-        { name: "Instagram", url: "#", iconClass: "fab fa-instagram" },
-      ],
-    };
-  },
-};
+  export default {
+    name: 'Footer',
+    data() {
+      return {
+        sections: [
+          {
+            title: 'Support',
+            items: [
+              'Help Center',
+              'BoolCover',
+              'Anti-Discrimination',
+              'Disability Support',
+              'Cancellation Options',
+              'Report neighborhood concern',
+            ],
+          },
+          {
+            title: 'Hosting',
+            items: [
+              'Boolbnb your home',
+              'BoolCover for Hosts',
+              'Hosting Resources',
+              'Community Forum',
+              'Hosting responsibly',
+              'Join a free Hosting class',
+            ],
+          },
+          {
+            title: 'Boolbnb',
+            items: [
+              'Newsroom',
+              'New Features',
+              'Careers',
+              'Investors',
+              'Gift Cards',
+              'Boolbnb.org emergency stays',
+            ],
+          },
+        ],
+        footerLinks: [
+          { text: 'Privacy', url: '#' },
+          { text: 'Terms', url: '#' },
+          { text: 'Sitemap', url: '#' },
+          { text: 'Company details', url: '#' },
+        ],
+        socialLinks: [
+          { name: 'Facebook', url: '#', iconClass: 'fab fa-facebook-f' },
+          { name: 'Twitter', url: '#', iconClass: 'fab fa-twitter' },
+          { name: 'Instagram', url: '#', iconClass: 'fab fa-instagram' },
+        ],
+      }
+    },
+  }
 </script>

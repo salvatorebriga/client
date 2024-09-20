@@ -36,8 +36,8 @@
 </template>
 
 <script>
-export default {
-  name: "ThemeSwitcher",
-  props: ["isDark"],
-};
+  export default {
+    name: 'ThemeSwitcher',
+    props: ['isDark'],
+  }
 </script>

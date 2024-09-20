@@ -16,30 +16,30 @@
 </template>
 
 <script>
-export default {
-  name: "ApartmentCard",
-  props: {
-    title: {
-      type: String,
-      required: true,
+  export default {
+    name: 'ApartmentCard',
+    props: {
+      title: {
+        type: String,
+        required: true,
+      },
+      img: {
+        type: String,
+        required: true,
+      },
+      host: {
+        type: String,
+        required: true,
+      },
+      isAvailable: {
+        type: Number,
+        required: true,
+      },
     },
-    img: {
-      type: String,
-      required: true,
+    computed: {
+      imageUrl() {
+        return `http://127.0.0.1:8000/storage/${this.img}`
+      },
     },
-    host: {
-      type: String,
-      required: true,
-    },
-    isAvailable: {
-      type: Number,
-      required: true,
-    },
-  },
-  computed: {
-    imageUrl() {
-      return `http://127.0.0.1:8000/storage/${this.img}`;
-    },
-  },
-};
+  }
 </script>

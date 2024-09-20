@@ -123,7 +123,7 @@
                   d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
                 />
               </svg>
-              {{ isDark ? "Light Mode" : "Dark Mode" }}
+              {{ isDark ? 'Light Mode' : 'Dark Mode' }}
             </a>
             <!-- Separatore -->
             <hr class="sm:hidden my-2 border-gray-200 dark:border-gray-700" />
@@ -148,52 +148,52 @@
 </template>
 
 <script>
-import { useDark } from "@vueuse/core";
-import SearchBar from "./SearchBar.vue";
+  import { useDark } from '@vueuse/core'
+  import SearchBar from './SearchBar.vue'
 
-export default {
-  name: "Header",
-  data() {
-    return {
-      isDark: useDark(),
-      isMenuOpen: false,
-    };
-  },
-  components: {
-    SearchBar,
-  },
-  methods: {
-    toggleDark() {
-      this.isDark = !this.isDark;
-      console.log(this.isDark);
+  export default {
+    name: 'Header',
+    data() {
+      return {
+        isDark: useDark(),
+        isMenuOpen: false,
+      }
     },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
+    components: {
+      SearchBar,
     },
-  },
-};
+    methods: {
+      toggleDark() {
+        this.isDark = !this.isDark
+        console.log(this.isDark)
+      },
+      toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen
+      },
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
-.left {
-  img {
-    width: 35px;
-    cursor: pointer;
-  }
-  .light {
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(27%) sepia(91%)
-        saturate(1741%) hue-rotate(343deg) brightness(87%) contrast(86%);
+  .left {
+    img {
+      width: 35px;
+      cursor: pointer;
     }
-  }
-  .dark {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(9%)
-      hue-rotate(242deg) brightness(102%) contrast(100%);
+    .light {
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(27%) sepia(91%)
+          saturate(1741%) hue-rotate(343deg) brightness(87%) contrast(86%);
+      }
+    }
+    .dark {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(9%)
+        hue-rotate(242deg) brightness(102%) contrast(100%);
 
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(54%) sepia(32%)
-        saturate(1133%) hue-rotate(198deg) brightness(101%) contrast(94%);
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(54%) sepia(32%)
+          saturate(1133%) hue-rotate(198deg) brightness(101%) contrast(94%);
+      }
     }
   }
-}
 </style>
