@@ -1,8 +1,6 @@
 <template>
   <main class="container mx-auto transition-all duration-300 py-14">
-    <h1
-      class="text-3xl font-bold text-gray-900 dark:text-white transition-all duration-300 px-20 lg:px-10 mb-10"
-    >
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white transition-all duration-300 px-20 lg:px-10 mb-10">
       {{ apartment.title }}
     </h1>
     <div class="container mx-auto transition-all duration-300 lg:flex">
@@ -13,11 +11,8 @@
 
           <!-- Immagine -->
           <div class="transition-all duration-300" max-h-80>
-            <img
-              :src="imageUrl"
-              alt="Apartment Image"
-              class="w-full max-h-96 rounded-lg object-cover transition-transform duration-500 hover:scale-105 mb-6"
-            />
+            <img :src="imageUrl" alt="Apartment Image"
+              class="w-full max-h-96 rounded-lg object-cover transition-transform duration-500 hover:scale-105 mb-6" />
           </div>
         </div>
         <!-- Descrizione -->
@@ -44,24 +39,13 @@
             </p>
           </div>
 
-          <div
-            v-if="apartment.user"
-            class="border-t-2 border-b-2 dark:border-t-indigo-600 dark:border-b-indigo-600 flex items-center p-5 gap-4"
-          >
+          <div v-if="apartment.user"
+            class="border-t-2 border-b-2 dark:border-t-indigo-600 dark:border-b-indigo-600 flex items-center p-5 gap-4">
             <div class="p-4 bg-gray-200 rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
               </svg>
             </div>
 
@@ -82,24 +66,14 @@
           <p class="text-gray-800 dark:text-gray-100 text-2xl">
             Services available
           </p>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:gap-8 p-8 text-gray-800 dark:text-gray-100"
-          >
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:gap-8 p-8 text-gray-800 dark:text-gray-100">
             <ul class="space-y-2">
-              <li
-                v-for="(item, index) in apartment.services"
-                :key="index"
-                v-show="index % 2 === 0"
-              >
+              <li v-for="(item, index) in apartment.services" :key="index" v-show="index % 2 === 0">
                 {{ item.name }}
               </li>
             </ul>
             <ul class="space-y-2">
-              <li
-                v-for="(item, index) in apartment.services"
-                :key="index"
-                v-show="index % 2 !== 0"
-              >
+              <li v-for="(item, index) in apartment.services" :key="index" v-show="index % 2 !== 0">
                 {{ item.name }}
               </li>
             </ul>
@@ -108,21 +82,15 @@
 
         <!-- Pulsante di contatto -->
         <div class="flex justify-start">
-          <button
-            @click="openModal"
-            class="mb-10 hover:scale-105 px-6 py-3 bg-airbnbcolor hover:bg-airbnbcolorhover dark:bg-indigo-600 text-white rounded-lg font-semibold shadow-lg dark:hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300"
-          >
+          <button @click="openModal"
+            class="mb-10 hover:scale-105 px-6 py-3 bg-airbnbcolor hover:bg-airbnbcolorhover dark:bg-indigo-600 text-white rounded-lg font-semibold shadow-lg dark:hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300">
             Contact Host
           </button>
         </div>
       </div>
 
-      <div
-        class="right flex px-20 lg:px-10 my-10 lg:my-0 lg:w-1/2 transition-transform duration-500 hover:scale-105"
-      >
-        <div
-          class="w-full h-96 bg-gray-800 rounded-lg flex justify-center items-center text-white"
-        >
+      <div class="right flex px-20 lg:px-10 my-10 lg:my-0 lg:w-1/2 transition-transform duration-500 hover:scale-105">
+        <div class="w-full h-96 bg-gray-800 rounded-lg flex justify-center items-center text-white">
           <div class="w-full transition-all duration-300 relative">
             <!-- mappa statica -->
             <MapTomTom :urlMap="urlMap" />
@@ -133,94 +101,45 @@
       </div>
     </div>
     <!-- Modale di contatto -->
-    <div
-      v-if="showContactModal"
-      class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
-    >
-      <div
-        class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full transition-all duration-300"
-      >
+    <div v-if="showContactModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full transition-all duration-300">
         <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
           Contact Seller
         </h2>
-        <form
-          @submit.prevent="sendMessage"
-          method="POST"
-          enctype="multipart/form-data"
-        >
+        <form @submit.prevent="sendMessage" method="POST" enctype="multipart/form-data">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label
-                for="name"
-                class="block font-medium text-sm text-gray-700 dark:text-gray-300"
-                >Name</label
-              >
-              <input
-                v-model="formData.name"
-                id="name"
+              <label for="name" class="block font-medium text-sm text-gray-700 dark:text-gray-300">Name</label>
+              <input v-model="formData.name" id="name"
                 class="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 bg-white dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-                type="text"
-                name="name"
-                required
-              />
+                type="text" name="name" required />
             </div>
             <div>
-              <label
-                for="surname"
-                class="block font-medium text-sm text-gray-700 dark:text-gray-300"
-                >Surname</label
-              >
-              <input
-                v-model="formData.surname"
-                id="surname"
+              <label for="surname" class="block font-medium text-sm text-gray-700 dark:text-gray-300">Surname</label>
+              <input v-model="formData.surname" id="surname"
                 class="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 bg-white dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-                type="text"
-                name="surname"
-                required
-              />
+                type="text" name="surname" required />
             </div>
           </div>
           <div class="mb-6">
-            <label
-              for="email"
-              class="block font-medium text-sm text-gray-700 dark:text-gray-300"
-              >Email</label
-            >
-            <input
-              v-model="formData.email"
-              id="email"
+            <label for="email" class="block font-medium text-sm text-gray-700 dark:text-gray-300">Email</label>
+            <input v-model="formData.email" id="email"
               class="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 bg-white dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-              type="email"
-              name="email"
-              required
-            />
+              type="email" name="email" required />
           </div>
           <div class="mb-6">
-            <label
-              for="message"
-              class="block font-medium text-sm text-gray-700 dark:text-gray-300"
-              >Message</label
-            >
-            <textarea
-              v-model="formData.message"
-              id="message"
+            <label for="message" class="block font-medium text-sm text-gray-700 dark:text-gray-300">Message</label>
+            <textarea v-model="formData.message" id="message"
               class="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 bg-white dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-              name="message"
-              rows="4"
-              required
-            ></textarea>
+              name="message" rows="4" required></textarea>
           </div>
           <div class="flex justify-end space-x-4">
-            <button
-              type="submit"
-              class="px-6 py-2 bg-airbnbcolor hover:bg-airbnbcolorhover dark:bg-indigo-600 text-white rounded-lg font-semibold shadow-lg dark:hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300"
-            >
+            <button type="submit"
+              class="px-6 py-2 bg-airbnbcolor hover:bg-airbnbcolorhover dark:bg-indigo-600 text-white rounded-lg font-semibold shadow-lg dark:hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300">
               Send Message
             </button>
-            <button
-              @click="closeModal"
-              class="px-6 py-2 bg-gray-500 text-white rounded-lg font-semibold shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 transition-all duration-300"
-            >
+            <button @click="closeModal"
+              class="px-6 py-2 bg-gray-500 text-white rounded-lg font-semibold shadow-lg hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-300 transition-all duration-300">
               Close
             </button>
           </div>
@@ -229,23 +148,16 @@
     </div>
 
     <!-- Modale di conferma -->
-    <div
-      v-if="showModal"
-      class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
-    >
-      <div
-        class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full transition-all duration-300"
-      >
+    <div v-if="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full transition-all duration-300">
         <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
           Message Sent
         </h2>
         <p class="text-gray-700 dark:text-gray-300">
           Your message has been sent successfully!
         </p>
-        <button
-          @click="showModal = false"
-          class="mt-6 px-6 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300"
-        >
+        <button @click="showModal = false"
+          class="mt-6 px-6 py-2 bg-indigo-600 text-white rounded-lg font-semibold shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300">
           Close
         </button>
       </div>
@@ -254,117 +166,130 @@
 </template>
 
 <script>
-  import axios from '../axios'
-  import MapTomTom from '../components/MapTomTom.vue'
+import axios from '../axios'
+import MapTomTom from '../components/MapTomTom.vue'
 
-  export default {
-    name: 'details-apartment',
-    components: {
-      MapTomTom,
+export default {
+  name: 'details-apartment',
+  components: {
+    MapTomTom,
+  },
+  data() {
+    return {
+      apartment: {},
+      formData: {
+        name: '',
+        surname: '',
+        email: '',
+        message: '',
+      },
+      showModal: false,
+      showContactModal: false,
+      urlMap: '',
+    }
+  },
+  computed: {
+    imageUrl() {
+      return `http://127.0.0.1:8000/storage/${this.apartment.img}`
     },
-    data() {
-      return {
-        apartment: {},
-        formData: {
+  },
+  async created() {
+    this.fetchApartment()
+  },
+
+  methods: {
+    async fetchApartment() {
+      try {
+        const response = await axios.get(
+          `/apartments/${this.$route.params.id}`
+        )
+        this.apartment = response.data
+        console.log('Apartment data:', this.apartment)
+        //funziona per la mappa di tomtom
+        this.fetchMapData()
+        // this.initMap(); //mappa dinamica
+
+        // Incremento delle visualizzazioni
+        this.incrementViewCount()
+
+      } catch (error) {
+        console.error('Error fetching apartment:', error)
+      }
+    },
+    openModal() {
+      this.showContactModal = true
+    },
+    closeModal() {
+      this.showContactModal = false
+    },
+    async sendMessage() {
+      try {
+        const formDataWithApartmentId = {
+          ...this.formData,
+          apartment_id: this.apartment.id,
+        }
+        const response = await axios.post('/message', formDataWithApartmentId)
+        console.log('Data sent:', response.data)
+
+        this.formData = {
           name: '',
           surname: '',
           email: '',
           message: '',
-        },
-        showModal: false,
-        showContactModal: false,
-        urlMap: '',
+        }
+
+        this.showContactModal = false
+        this.showModal = true
+      } catch (error) {
+        console.error(
+          'Error sending message:',
+          error.response ? error.response.data : error.message
+        )
       }
     },
-    computed: {
-      imageUrl() {
-        return `http://127.0.0.1:8000/storage/${this.apartment.img}`
-      },
-    },
-    async created() {
-      this.fetchApartment()
-    },
-
-    methods: {
-      async fetchApartment() {
-        try {
-          const response = await axios.get(
-            `/apartments/${this.$route.params.id}`
-          )
-          this.apartment = response.data
-          console.log('Apartment data:', this.apartment)
-          //funziona per la mappa di tomtom
-          this.fetchMapData()
-          // this.initMap(); //mappa dinamica
-        } catch (error) {
-          console.error('Error fetching apartment:', error)
+    //MAPPA STATICA
+    async fetchMapData() {
+      try {
+        if (this.apartment.latitude && this.apartment.longitude) {
+          const response = await axios.get('/map', {
+            params: {
+              lat: this.apartment.latitude,
+              lng: this.apartment.longitude,
+            },
+          })
+          this.urlMap = response.data.url
+          // console.log(this.urlMap);
+        } else {
+          console.error('Latitude or longitude is missing:', this.apartment)
         }
-      },
-      openModal() {
-        this.showContactModal = true
-      },
-      closeModal() {
-        this.showContactModal = false
-      },
-      async sendMessage() {
-        try {
-          const formDataWithApartmentId = {
-            ...this.formData,
-            apartment_id: this.apartment.id,
-          }
-          const response = await axios.post('/message', formDataWithApartmentId)
-          console.log('Data sent:', response.data)
-
-          this.formData = {
-            name: '',
-            surname: '',
-            email: '',
-            message: '',
-          }
-
-          this.showContactModal = false
-          this.showModal = true
-        } catch (error) {
-          console.error(
-            'Error sending message:',
-            error.response ? error.response.data : error.message
-          )
-        }
-      },
-      //MAPPA STATICA
-      async fetchMapData() {
-        try {
-          if (this.apartment.latitude && this.apartment.longitude) {
-            const response = await axios.get('/map', {
-              params: {
-                lat: this.apartment.latitude,
-                lng: this.apartment.longitude,
-              },
-            })
-            this.urlMap = response.data.url
-            // console.log(this.urlMap);
-          } else {
-            console.error('Latitude or longitude is missing:', this.apartment)
-          }
-        } catch (error) {
-          console.error('Error fetching map data:', error)
-        }
-      },
-      // mappa dinamica (da sistemare il la chiave)
-      // initMap() {
-      // 	// Inizializza la mappa TomTom
-      // 	const map = tt.map({
-      // 		key: {apiKey}, // Sostituisci con la tua API key
-      // 		container: "map",
-      // 		center: [this.apartment.longitude, this.apartment.latitude],
-      // 		zoom: 15,
-      // 	});
-
-      // 	// Aggiungi un marker alla posizione dell'appartamento
-      // 	const marker = new tt.Marker()
-      // 		.setLngLat([this.apartment.longitude, this.apartment.latitude])
-      // 		.addTo(map);
-      // },
+      } catch (error) {
+        console.error('Error fetching map data:', error)
+      }
     },
-  }
+    // mappa dinamica (da sistemare il la chiave)
+    // initMap() {
+    // 	// Inizializza la mappa TomTom
+    // 	const map = tt.map({
+    // 		key: {apiKey}, // Sostituisci con la tua API key
+    // 		container: "map",
+    // 		center: [this.apartment.longitude, this.apartment.latitude],
+    // 		zoom: 15,
+    // 	});
+
+    // 	// Aggiungi un marker alla posizione dell'appartamento
+    // 	const marker = new tt.Marker()
+    // 		.setLngLat([this.apartment.longitude, this.apartment.latitude])
+    // 		.addTo(map);
+    // },
+    async incrementViewCount() {
+      try {
+        await axios.post(`/apartments/${this.$route.params.id}/store-view-stat`)
+        console.log('View count incremented')
+      } catch (error) {
+        console.error('Error incrementing view count:', error)
+      }
+    },
+  },
+
+}
 </script>
