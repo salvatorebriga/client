@@ -1,11 +1,14 @@
 <template>
   <main>
     <div class="dark:text-white py-10 px-6 transition-all duration-300 3xl:px-20">
+      <h2 class="pt-6 pb-12 font-bold text-2xl sm:text-4xl transition-all duration-300">
+        Sponsored Apartment
+      </h2>
       <div
         class="gap-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 transition-all duration-300">
         <ApartmentCard v-for="apartment in sponsoredApartments" @click="showApartmentDetails(apartment.id)"
           :title="apartment.title" :img="apartment.img" :host="`${apartment.user.name} ${apartment.user.surname}`"
-          :isAvailable="apartment.is_available" :key="apartment.id" />
+          :isAvailable="apartment.is_available" :key="apartment.id" :address ="apartment.address" />
       </div>
       <h2 class="pt-6 pb-12 font-bold text-2xl sm:text-4xl transition-all duration-300">
         Selected for you
