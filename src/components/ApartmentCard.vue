@@ -4,7 +4,7 @@
     class="relative overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105"
   >
     <img
-      class="w-full h-80 object-cover rounded-lg mb-1"
+      class="w-full h-80 object-cover rounded-lg mb-1 transition-transform duration-300 ease-in-out hover:scale-110"
       :src="imageUrl"
       :alt="title"
     />
