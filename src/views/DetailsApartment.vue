@@ -7,7 +7,7 @@
           <img
             :src="imageUrl"
             :alt="apartment.title"
-            class="w-full h-96 object-cover shadow-md transition-transform duration-300 hover:scale-105"
+            class="w-full max-h-96 object-cover shadow-md transition-transform duration-300 hover:scale-105"
           />
         </div>
 
@@ -64,7 +64,7 @@
             Services available
           </h2>
           <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-10 mt-6 px-4 md:px-10"
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 mt-6 px-4 md:px-10"
           >
             <div
               class="flex items-center"
@@ -74,7 +74,11 @@
               <div
                 class="bg-blue-100 dark:bg-blue-900 p-4 rounded-full shadow-lg"
               >
-                <svg
+                <i
+                  :class="item.icon"
+                  class="h-6 w-6 text-blue-500 dark:text-blue-400 text-center align-middle leading-normal"
+                ></i>
+                <!-- <svg
                   class="h-6 w-6 text-blue-500 dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
@@ -87,7 +91,7 @@
                     stroke-linejoin="round"
                     d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z"
                   ></path>
-                </svg>
+                </svg> -->
               </div>
               <p class="ml-3 text-lg text-gray-700 dark:text-gray-300">
                 {{ item.name }}
