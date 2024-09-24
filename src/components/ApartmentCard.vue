@@ -13,14 +13,8 @@
       <p class="mb-1">Host: {{ host }}</p>
       <p class="mb-1">{{ address }}</p>
     </div>
-    <div v-if="isSponsored == 1" class="absolute top-2 right-2">
-      <i
-        class="fas fa-star text-3xl"
-        style="
-          filter: brightness(0) saturate(100%) invert(98%) sepia(95%)
-            saturate(7493%) hue-rotate(344deg) brightness(95%) contrast(114%);
-        "
-      ></i>
+    <div v-if="isSponsored == 1" class="absolute top-2 left-2">
+      <i class="fas fa-star text-2xl" style=""></i>
     </div>
   </div>
 </template>
