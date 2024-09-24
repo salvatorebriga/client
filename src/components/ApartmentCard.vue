@@ -10,7 +10,7 @@
     />
     <div class="p-2 dark:text-white">
       <h2 class="font-bold mb-1">{{ title }}</h2>
-      <p class="mb-1">Seller: {{ host }}</p>
+      <p class="mb-1">Host: {{ host }}</p>
       <p class="mb-1">{{ address }}</p>
     </div>
   </div>
