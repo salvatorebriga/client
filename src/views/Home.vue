@@ -1,7 +1,7 @@
 <template>
   <main>
     <div
-      class="dark:text-white py-12 px-6 transition-all duration-300 3xl:px-20"
+      class="dark:text-white py-6 px-6 transition-all duration-300 3xl:px-20"
     >
       <div v-if="sponsoredApartments.length">
         <!-- <h2
@@ -27,7 +27,7 @@
       </div>
 
       <h2
-        class="pt-6 pb-12 font-bold text-2xl sm:text-4xl transition-all duration-300"
+        class="pb-6 font-bold text-2xl sm:text-4xl transition-all duration-300"
       >
         Selected for you
       </h2>
