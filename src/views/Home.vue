@@ -41,6 +41,7 @@
           :img="apartment.img"
           :host="`${apartment.user.name} ${apartment.user.surname}`"
           :isAvailable="apartment.is_available"
+          :address="apartment.address"
           :key="apartment.id"
         />
       </div>
