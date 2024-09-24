@@ -21,6 +21,7 @@
             :isAvailable="apartment.is_available"
             :key="apartment.id"
             :address="apartment.address"
+            :isSponsored="true"
           />
         </div>
       </div>
