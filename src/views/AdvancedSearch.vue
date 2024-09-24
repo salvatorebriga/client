@@ -62,6 +62,7 @@
               id="radius"
               class="border border-gray-300 rounded-none p-2 w-full mb-2 text-black dark:bg-gray-900 dark:border-none dark:text-white focus:outline-none transition-all duration-300"
               placeholder="Distance in km"
+              min="1"
             />
           </div>
 
@@ -78,6 +79,7 @@
               id="minRooms"
               class="border border-gray-300 rounded-none p-2 w-full mb-2 text-black dark:bg-gray-900 dark:border-none dark:text-white focus:outline-none transition-all duration-300"
               placeholder="Minimum number of rooms"
+              min="1"
             />
           </div>
 
@@ -247,11 +249,15 @@
               )}`
             }
 
+            console.log(query)
+
             const response = await axios.get(query)
             this.results = response.data
+            console.log(this.results)
           } catch (error) {
             this.error =
               'An error occurred during the search. Please try again later.'
+            console.error('Search error:', error) // Aggiunto per il debug
           } finally {
             this.loading = false
           }
@@ -266,6 +272,7 @@
           this.availableServices = response.data
         } catch (error) {
           this.error = 'Unable to load available services.'
+          console.error('Services loading error:', error)
         }
       },
 
