@@ -13,9 +13,6 @@
       <p class="mb-1">Host: {{ host }}</p>
       <p class="mb-1">{{ address }}</p>
     </div>
-    <div v-if="isSponsored == 1" class="absolute top-2 left-2">
-      <i class="fas fa-star text-2xl" style=""></i>
-    </div>
   </div>
 </template>
 
