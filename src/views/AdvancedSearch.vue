@@ -215,7 +215,7 @@
     created() {
       this.fetchAvailableServices()
       this.fetchResults()
-      this.debouncedGetAutocomplete = useDebounceFn(this.getAutocomplete, 400) // Usa useDebounceFn di VueUse
+      this.debouncedGetAutocomplete = useDebounceFn(this.getAutocomplete, 300)
     },
     watch: {
       searchQuery(newQuery) {

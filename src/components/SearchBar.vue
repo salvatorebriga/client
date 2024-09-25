@@ -82,7 +82,7 @@
     },
     created() {
       // Usa useDebounceFn di VueUse
-      this.debouncedGetAutocomplete = useDebounceFn(this.getAutocomplete, 400)
+      this.debouncedGetAutocomplete = useDebounceFn(this.getAutocomplete, 300)
     },
 
     computed: {

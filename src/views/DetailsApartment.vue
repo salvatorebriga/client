@@ -29,12 +29,17 @@
 
         <!-- Informazioni appartamento -->
         <div
-          class="flex flex-wrap justify-center gap-10 mt-10 text-center text-lg"
+          class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 mt-10 text-center text-lg"
         >
-          <div class="w-48 p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
+          <div class="p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
+            <h3 class="font-semibold text-gray-700 dark:text-gray-200">
+              m&sup2;
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">{{ apartment.mq }}</p>
+          </div>
+          <div class="p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
             <!-- Aggiunta modalità scura bg-gray-800 -->
             <h3 class="font-semibold text-gray-700 dark:text-gray-200">
-              <!-- Cambiato il testo della modalità scura a "text-gray-200" -->
               Rooms
             </h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -42,11 +47,12 @@
               {{ apartment.rooms }}
             </p>
           </div>
-          <div class="w-48 p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
+          <div class="p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
             <h3 class="font-semibold text-gray-700 dark:text-gray-200">Beds</h3>
             <p class="text-gray-600 dark:text-gray-400">{{ apartment.beds }}</p>
           </div>
-          <div class="w-48 p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
+
+          <div class="p-4 bg-white rounded-xl shadow-md dark:bg-gray-800">
             <h3 class="font-semibold text-gray-700 dark:text-gray-200">
               Bathrooms
             </h3>
