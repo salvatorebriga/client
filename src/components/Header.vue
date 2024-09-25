@@ -4,7 +4,7 @@
   >
     <div class="py-6 justify-between flex items-center">
       <!-- sinistra -->
-      <div class="left flex items-center w-1/3 gap-2 lg:pb-16">
+      <div class="left flex items-center w-1/3 gap-2 self-start py-2">
         <!-- Logo per la modalità chiara -->
         <img
           class="light block dark:hidden hover:scale-105"
@@ -27,11 +27,18 @@
 
       <!-- centro -->
       <div class="hidden lg:flex justify-center items-center w-1/3 flex-col">
-        <SearchBar></SearchBar>
+        <SearchBar
+          v-if="
+            $route.name !== 'advanced-search' &&
+            this.$route.name !== 'details-apartment'
+          "
+        ></SearchBar>
       </div>
 
       <!-- destra -->
-      <div class="flex items-center justify-end gap-6 w-1/3 flex-grow lg:pb-16">
+      <div
+        class="flex items-center justify-end gap-6 w-1/3 flex-grow self-start"
+      >
         <!-- href to dashboard -->
         <div
           class="hidden sm:block px-4 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-indigo-400 transition-all duration-300 hover:scale-105"
@@ -141,6 +148,10 @@
     </div>
     <div
       class="container pb-6 mx-auto justify-center flex items-center lg:hidden p-3"
+      v-if="
+        $route.name !== 'advanced-search' &&
+        this.$route.name !== 'details-apartment'
+      "
     >
       <SearchBar></SearchBar>
     </div>

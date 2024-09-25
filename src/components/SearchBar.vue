@@ -84,15 +84,6 @@
       // Usa useDebounceFn di VueUse
       this.debouncedGetAutocomplete = useDebounceFn(this.getAutocomplete, 300)
     },
-
-    computed: {
-      isVisible() {
-        return (
-          this.$route.name !== 'advanced-search' &&
-          this.$route.name !== 'details-apartment'
-        )
-      },
-    },
     methods: {
       search() {
         if (this.selected) {
