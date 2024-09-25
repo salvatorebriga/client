@@ -252,12 +252,16 @@
             console.log(query)
 
             const response = await axios.get(query)
-            this.results = response.data
+
+            this.results = response.data.sort((a, b) => {
+              return b.is_sponsored - a.is_sponsored
+            })
+
             console.log(this.results)
           } catch (error) {
             this.error =
               'An error occurred during the search. Please try again later.'
-            console.error('Search error:', error) // Aggiunto per il debug
+            console.error('Search error:', error)
           } finally {
             this.loading = false
           }
